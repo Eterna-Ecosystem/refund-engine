@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eterna International Store</title>
+
+  <!-- Branding -->
+  <link rel="icon" href="assets/eterna-logo.png" type="image/png">
+  <meta name="description" content="Eterna International - Elevating Digital Ecosystems">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Ads Tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-CONVERSION_ID');
+  </script>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+  </script>
+
+  <!-- Digistore24 Tracking -->
+  <script type="text/javascript">
+    (function(d,s,id){
+      var js,fjs=d.getElementsByTagName(s)[0];
+      if(d.getElementById(id)) return;
+      js=d.createElement(s); js.id=id;
+      js.src="https://www.digistore24.com/js/tracking.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }(document,"script","ds24-tracking"));
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="assets/eterna-emblem.png" alt="Eterna International Logo" class="logo">
+    <h1>Eterna International Store</h1>
+    <p>Elevating Digital Ecosystems</p>
+  </header>
+
+  <!-- Store Section -->
+  <main id="store">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      
+      <!-- Refund Engine -->
+      <div class="product">
+        <img src="assets/product1.jpg" alt="Refund Engine">
+        <h3>Refund Engine</h3>
+        <p>Automated receipt return system for restaurants.</p>
+        <button onclick="gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID'});">
+          Buy Now
+        </button>
+      </div>
+
+      <!-- Job Placement Hub -->
+      <div class="product">
+        <img src="assets/product2.jpg" alt="Job Placement Hub">
+        <h3>Job Placement Hub</h3>
+        <p>Education + employment pipeline powered by Eterna.</p>
+        <button>Learn More</button>
+      </div>
+
+      <!-- Add more products here -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Eterna International. All rights reserved.</p>
+  </footer>
+</body>
+</html>
