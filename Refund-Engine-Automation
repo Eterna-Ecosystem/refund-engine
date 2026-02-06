@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refund Engine</title>
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Refund Engine Portal</h1>
+    <p>Automated intake and branded confirmation</p>
+  </header>
+
+  <main>
+    <!-- Funnel section -->
+    <section id="intake">
+      <h2>Submit Your Receipt</h2>
+      <form action="/process" method="post">
+        <label for="receipt">Upload Receipt:</label>
+        <input type="file" id="receipt" name="receipt" required>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- Confirmation placeholder -->
+    <section id="confirmation">
+      <h2>Status</h2>
+      <p>Your refund request will appear here.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Eterna Ecosystem</p>
+  </footer>
+
+  <!-- Optional JS file -->
+  <script src="script.js"></script>
+</body>
+</html>
