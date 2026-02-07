@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <title>Refund Engine</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <header>
     <h1>Refund Engine is live!</h1>
     <nav>
       <ul>
-        <li><a href="#">IDonna</a></li>
+        <li><a href="#">iDonna</a></li>
         <li><a href="#">Priception</a></li>
         <li><a href="#">Datostion</a></li>
       </ul>
@@ -34,7 +35,7 @@
         <label for="decail">Decail</label>
         <textarea id="decail" name="decail"></textarea>
 
-        <button type="submit">Submf Request</button>
+        <button type="submit">Submit Request</button>
       </form>
     </section>
 
@@ -42,14 +43,14 @@
 
     <aside class="slidus">
       <h3>Slidus</h3>
-      <p>The electrim roonit and fiever stalusand urespeomility</p>
+      <p>The electronic unit and system responsibility</p>
     </aside>
 
     <aside class="slidus">
       <h3>Slidus</h3>
-      <p>The nrefonrmatrense, nestisare on enessage reponteriniry.</p>
+      <p>The information resource, necessary for message reporting</p>
     </aside>
   </main>
+  <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
