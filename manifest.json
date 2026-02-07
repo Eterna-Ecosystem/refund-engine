@@ -1,0 +1,21 @@
+{
+  "name": "Eterna Corridor 1",
+  "short_name": "Corridor1",
+  "description": "Proof-driven automation corridor for onboarding",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0f2c",
+  "theme_color": "#00c6ff",
+  "icons": [
+    {
+      "src": "payment-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "payment-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
