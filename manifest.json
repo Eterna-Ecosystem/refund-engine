@@ -1,20 +1,25 @@
 {
-  "name": "Eterna Corridor 1",
-  "short_name": "Corridor1",
-  "description": "Proof-driven automation corridor for onboarding",
+  "name": "Eterna Refund Engine",
+  "short_name": "RefundEngine",
+  "description": "Automation corridor for customer refund requests",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0a0f2c",
   "theme_color": "#00c6ff",
   "icons": [
     {
-      "src": "payment-icon.png",
+      "src": "paypalicon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "payment-icon.png",
-      "sizes": "512x512",
+      "src": "payoneericon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "payfasticon.png",
+      "sizes": "192x192",
       "type": "image/png"
     }
   ]
