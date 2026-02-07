@@ -63,6 +63,22 @@ button {
   margin-top: 15px;
 }
 
+.payment-options {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.payment-options img {
+  width: 80px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.payment-options img:hover {
+  transform: scale(1.1);
+}
+
 .slidus {
   background: rgba(255,255,255,0.05);
   margin: 20px auto;
