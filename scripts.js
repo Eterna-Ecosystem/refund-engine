@@ -1,14 +1,15 @@
-// Refund Engine Interactive Logic
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("refundForm");
-  const confirmation = document.getElementById("confirmation");
+document.getElementById('refundForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  const formData = new FormData(this);
+  const payload = Object.fromEntries(formData.entries());
 
-    confirmation.innerHTML = `
-      <h2>Status</h2>
-      <p>✅ Your refund request has been submitted successfully.</p>
-    `;
+  const response = await fetch('/api/refund', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
   });
+
+  const result = await response.json();
+  alert(`Refund Engine Response: ${result.message}`);
 });
