@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const path = require('path');
 
-// Middleware to parse JSON form submissions
+// Middleware to parse JSON and form submissions
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -12,7 +12,7 @@ app.get('/healthz', (req, res) => {
   res.send('Refund Engine is running ✅');
 });
 
-// Serve static files
+// Serve static files (style.css, scripts.js, icons, manifest.json)
 app.use(express.static(path.join(__dirname)));
 
 // Root route - serve index.html
