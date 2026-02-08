@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>Refund Engine Portal</title>
+  <!-- Correct stylesheet link -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Refund Engine Portal</h1>
-  <form id="refundForm" method="POST" action="/api/refund">
-    <input type="text" name="transactionId" placeholder="Transaction ID" required>
-    <select name="processor" required>
+  <form id="refundForm">
+    <input type="text" name="transactionId" placeholder="Transaction ID">
+    <select name="processor">
       <option value="paypal">PayPal</option>
       <option value="payoneer">Payoneer</option>
       <option value="payfast">PayFast</option>
       <option value="digistore24">Digistore24</option>
     </select>
-    <input type="number" name="amount" placeholder="Amount" required>
-    <textarea name="reason" placeholder="Reason for refund"></textarea>
+    <input type="number" name="amount" placeholder="Amount">
+    <textarea name="reason" placeholder="Reason"></textarea>
     <button type="submit">Submit Refund</button>
   </form>
-  <script src="scripts.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
