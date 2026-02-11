@@ -3,28 +3,26 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const path = require('path');
 
-// Middleware to parse JSON and form submissions
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Health check endpoint
+// Health check
 app.get('/healthz', (req, res) => {
   res.send('Refund Engine is running ✅');
 });
 
-// Serve static files (style.css, script.js, icons, manifest.json)
+// Serve static files
 app.use(express.static(path.join(__dirname)));
 
-// Root route - serve index.html
+// Root route
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Refund API route
+// Refund API
 app.post('/api/refund', (req, res) => {
   const { transactionId, amount, reason } = req.body;
 
-  // Placeholder response — later wire into email confirmation + receipt validation
   res.json({
     status: 'success',
     message: 'Refund request received.',
