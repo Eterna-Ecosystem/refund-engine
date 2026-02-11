@@ -1,4 +1,5 @@
 const express = require('express');
+const nodemailer = require('nodemailer');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const path = require('path');
@@ -20,16 +21,55 @@ app.get('/', (req, res) => {
 });
 
 // Refund API
-app.post('/api/refund', (req, res) => {
+app.post('/api/refund', async (req, res) => {
   const { transactionId, amount, reason } = req.body;
 
-  res.json({
-    status: 'success',
-    message: 'Refund request received.',
-    transactionId,
-    amount,
-    reason
-  });
+  try {
+    // Configure transporter (use your email service credentials)
+    let transporter = nodemailer.createTransport({
+      service: 'gmail', // or Outlook, etc.
+      auth: {
+        user: process.env.EMAIL_USER, // set in .env
+        pass: process.env.EMAIL_PASS  // set in .env
+      }
+    });
+
+    // Send confirmation email
+    await transporter.sendMail({
+      from: `"Eterna Refund Engine" <${process.env.EMAIL_USER}>`,
+      to: req.body.customerEmail || process.env.TEST_EMAIL, // fallback for testing
+      subject: 'Refund Request Confirmation',
+      text: `Dear Customer,
+
+We have received your refund request.
+
+Transaction ID: ${transactionId}
+Amount: ${amount}
+Reason: ${reason}
+
+Our team will process your request shortly.
+
+Best regards,
+Eterna Refund Engine`
+    });
+
+    res.json({
+      status: 'success',
+      message: 'Refund request received. Confirmation email sent.',
+      transactionId,
+      amount,
+      reason
+    });
+  } catch (error) {
+    console.error('Email error:', error);
+    res.json({
+      status: 'error',
+      message: 'Refund request received, but email could not be sent.',
+      transactionId,
+      amount,
+      reason
+    });
+  }
 });
 
 app.listen(PORT, () => {
