@@ -7,16 +7,20 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Health check
 app.get('/healthz', (req, res) => {
   res.send('Refund Engine is running ✅');
 });
 
+// Serve static files
 app.use(express.static(path.join(__dirname)));
 
+// Root route
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// Refund API
 app.post('/api/refund', async (req, res) => {
   const { transactionId, amount, reason, customerEmail } = req.body;
 
