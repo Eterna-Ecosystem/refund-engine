@@ -9,14 +9,8 @@
 <body>
   <h1>Refund Engine Portal</h1>
   <form id="refundForm">
-    <input type="text" name="transactionId" placeholder="Transaction ID">
-    <select name="processor">
-      <option value="paypal">PayPal</option>
-      <option value="payoneer">Payoneer</option>
-      <option value="payfast">PayFast</option>
-      <option value="digistore24">Digistore24</option>
-    </select>
-    <input type="number" name="amount" placeholder="Amount">
+    <input type="text" name="transactionId" placeholder="Transaction ID" required>
+    <input type="number" name="amount" placeholder="Amount" required>
     <textarea name="reason" placeholder="Reason"></textarea>
     <button type="submit">Submit Refund</button>
   </form>
