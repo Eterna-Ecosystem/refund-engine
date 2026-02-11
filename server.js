@@ -22,22 +22,20 @@ app.get('/', (req, res) => {
 
 // Refund API
 app.post('/api/refund', async (req, res) => {
-  const { transactionId, amount, reason } = req.body;
+  const { transactionId, amount, reason, customerEmail } = req.body;
 
   try {
-    // Configure transporter (use your email service credentials)
     let transporter = nodemailer.createTransport({
       service: 'gmail', // or Outlook, etc.
       auth: {
-        user: process.env.EMAIL_USER, // set in .env
-        pass: process.env.EMAIL_PASS  // set in .env
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
       }
     });
 
-    // Send confirmation email
     await transporter.sendMail({
       from: `"Eterna Refund Engine" <${process.env.EMAIL_USER}>`,
-      to: req.body.customerEmail || process.env.TEST_EMAIL, // fallback for testing
+      to: customerEmail || process.env.TEST_EMAIL,
       subject: 'Refund Request Confirmation',
       text: `Dear Customer,
 
