@@ -1,9 +1,8 @@
-/* Global reset */
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #0a1f44, #0d47a1);
-  color: #e0f7fa;
+  background: #f5f5f5;
+  color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,44 +10,35 @@ body {
   min-height: 100vh;
 }
 
-/* Heading */
 h1 {
-  color: #64b5f6;
-  text-shadow: 0 0 10px #2196f3;
+  color: #222;
   margin-bottom: 20px;
+  text-shadow: none;
 }
 
-/* Form styling */
 form {
-  background: rgba(13, 71, 161, 0.85);
+  background: #fff;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(33, 150, 243, 0.6);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   width: 320px;
 }
 
-input, select, textarea, button {
+input, textarea, button {
   width: 100%;
   margin: 10px 0;
   padding: 12px;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
 }
 
-/* Inputs */
-input, select, textarea {
-  background: #1e3a5f;
-  color: #e0f7fa;
-}
-
 input::placeholder, textarea::placeholder {
-  color: #90caf9;
+  color: #999;
 }
 
-/* Button */
 button {
-  background: #2196f3;
+  background: #333;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
@@ -56,5 +46,5 @@ button {
 }
 
 button:hover {
-  background: #1976d2;
-  }
+  background: #555;
+}
