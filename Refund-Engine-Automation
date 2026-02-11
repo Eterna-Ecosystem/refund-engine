@@ -41,19 +41,6 @@
 
     <section id="confirmation"></section>
 
-    <section class="payment-options">
-      <h2>Available Payment Gateways</h2>
-      <a href="https://www.paypal.com" target="_blank">
-        <img src="paypalicon.png" alt="PayPal">
-      </a>
-      <a href="https://www.payoneer.com" target="_blank">
-        <img src="payoneericon.png" alt="Payoneer">
-      </a>
-      <a href="https://www.payfast.co.za" target="_blank">
-        <img src="payfasticon.png" alt="PayFast">
-      </a>
-    </section>
-
     <aside class="slidus">
       <h3>Information</h3>
       <p>This section provides system responsibility details.</p>
@@ -64,6 +51,7 @@
       <p>This section contains reporting and support information.</p>
     </aside>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
