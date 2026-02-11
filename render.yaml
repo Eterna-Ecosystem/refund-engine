@@ -2,31 +2,18 @@ services:
   - type: web
     name: refund-engine
     env: node
-    plan: starter
-    branch: main
+    plan: free
     buildCommand: "npm install"
-    startCommand: "node server.js"
+    startCommand: "npm start"
     autoDeploy: true
     envVars:
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: 10000
-      - key: PAYPAL_CLIENT_ID
-        value: ${PAYPAL_CLIENT_ID}
-      - key: PAYPAL_SECRET
-        value: ${PAYPAL_SECRET}
-      - key: PAYONEER_API_KEY
-        value: ${PAYONEER_API_KEY}
       - key: PAYFAST_MERCHANT_ID
-        value: ${PAYFAST_MERCHANT_ID}
+        value: your-merchant-id-here
       - key: PAYFAST_MERCHANT_KEY
-        value: ${PAYFAST_MERCHANT_KEY}
-      - key: RENDER_MASTER_EMAIL
-        value: eternacentralhub@outlook.com
-      - key: RENDER_MASTER_PASS
-        value: V9!tQz7@Lm2#Xp4$Rw6%Yh8&Jk0*Bn3
-      - key: GIFT_HUB_MASTER_USER
-        value: Dgov626
-      - key: GIFT_HUB_MASTER_PASS
-        value: Dkmtsyntax1234!$#@
+        value: your-merchant-key-here
+      - key: PAYFAST_PASSPHRASE
+        value: your-passphrase-here
+    routes:
+      - type: http
+        source: /
+        destination: /
