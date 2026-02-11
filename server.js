@@ -12,7 +12,7 @@ app.get('/healthz', (req, res) => {
   res.send('Refund Engine is running ✅');
 });
 
-// Serve static files (style.css, scripts.js, icons, manifest.json)
+// Serve static files (style.css, script.js, icons, manifest.json)
 app.use(express.static(path.join(__dirname)));
 
 // Root route - serve index.html
@@ -22,12 +22,12 @@ app.get('/', (req, res) => {
 
 // Refund API route
 app.post('/api/refund', (req, res) => {
-  const { transactionId, processor, amount, reason } = req.body;
+  const { transactionId, amount, reason } = req.body;
 
-  // Placeholder response — later wire into PayPal, Payoneer, PayFast, Digistore24 APIs
+  // Placeholder response — later wire into email confirmation + receipt validation
   res.json({
     status: 'success',
-    message: `Refund request for ${processor} received.`,
+    message: 'Refund request received.',
     transactionId,
     amount,
     reason
