@@ -1,8 +1,9 @@
+/* Global reset */
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f5f5f5;
-  color: #333;
+  background: #f5f5f5; /* neutral light background */
+  color: #333; /* dark text */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,17 +11,19 @@ body {
   min-height: 100vh;
 }
 
+/* Heading */
 h1 {
   color: #222;
   margin-bottom: 20px;
-  text-shadow: none;
+  text-shadow: none; /* removed glow */
 }
 
+/* Form styling */
 form {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* subtle shadow */
   width: 320px;
 }
 
@@ -33,10 +36,17 @@ input, textarea, button {
   font-size: 14px;
 }
 
+/* Inputs */
+input, textarea {
+  background: #fff;
+  color: #333;
+}
+
 input::placeholder, textarea::placeholder {
   color: #999;
 }
 
+/* Button */
 button {
   background: #333;
   color: #fff;
