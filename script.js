@@ -4,11 +4,12 @@ document.getElementById('refundForm').addEventListener('submit', async function(
   const transactionId = e.target.transactionId.value;
   const amount = e.target.amount.value;
   const reason = e.target.reason.value;
+  const customerEmail = e.target.customerEmail.value;
 
   const response = await fetch('/api/refund', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ transactionId, amount, reason })
+    body: JSON.stringify({ transactionId, amount, reason, customerEmail })
   });
 
   const data = await response.json();
