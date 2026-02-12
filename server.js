@@ -1,75 +1,39 @@
-const express = require('express');
-const nodemailer = require('nodemailer');
-const path = require('path');
+const express = require("express");
+const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
+require("dotenv").config();
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+app.use(bodyParser.json());
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Health check
-app.get('/healthz', (req, res) => {
-  res.send('Refund Engine is running ✅');
-});
-
-// Serve static files
-app.use(express.static(path.join(__dirname)));
-
-// Root route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-// Refund API
-app.post('/api/refund', async (req, res) => {
+app.post("/refund", async (req, res) => {
   const { transactionId, amount, reason, customerEmail } = req.body;
 
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: customerEmail,
+    subject: "Refund Confirmation",
+    text: `Your refund for transaction ${transactionId} of amount ${amount} has been processed. Reason: ${reason}`
+  };
+
   try {
-    let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
-    });
-
-    await transporter.sendMail({
-      from: `"Eterna Refund Engine" <${process.env.EMAIL_USER}>`,
-      to: customerEmail || process.env.TEST_EMAIL,
-      subject: 'Refund Request Confirmation',
-      text: `Dear Customer,
-
-We have received your refund request.
-
-Transaction ID: ${transactionId}
-Amount: ${amount}
-Reason: ${reason}
-
-Our team will process your request shortly.
-
-Best regards,
-Eterna Refund Engine`
-    });
-
-    res.json({
-      status: 'success',
-      message: 'Refund request received. Confirmation email sent.',
-      transactionId,
-      amount,
-      reason
-    });
+    await transporter.sendMail(mailOptions);
+    res.status(200).send("Refund processed");
   } catch (error) {
-    console.error('Email error:', error);
-    res.json({
-      status: 'error',
-      message: 'Refund request received, but email could not be sent.',
-      transactionId,
-      amount,
-      reason
-    });
+    console.error(error);
+    res.status(500).send("Error processing refund");
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Refund Engine started on port ${PORT}`);
-});
+app.get("/healthz", (req, res) => res.send("OK"));
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Refund Engine started on port ${PORT}`));
