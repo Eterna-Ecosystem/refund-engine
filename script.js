@@ -1,17 +1,27 @@
-document.getElementById('refundForm').addEventListener('submit', async function(e) {
+document.getElementById("refundForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const transactionId = e.target.transactionId.value;
-  const amount = e.target.amount.value;
-  const reason = e.target.reason.value;
-  const customerEmail = e.target.customerEmail.value;
+  const formData = {
+    transactionId: this.transactionId.value,
+    amount: this.amount.value,
+    reason: this.reason.value,
+    customerEmail: this.customerEmail.value
+  };
 
-  const response = await fetch('/api/refund', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ transactionId, amount, reason, customerEmail })
-  });
+  try {
+    const response = await fetch("/refund", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
 
-  const data = await response.json();
-  alert(`Refund Engine Response: ${data.message}`);
+    if (response.ok) {
+      alert("Refund submitted successfully!");
+    } else {
+      alert("Error submitting refund.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Network error.");
+  }
 });
