@@ -1,4 +1,5 @@
 # Refund Engine 💎✨
+
 Refund Engine is a sovereign portal service within the **Eterna Ecosystem**.  
 It breathes through environment variables, speaks through its frontend routes,  
 and anchors prosperity through customer interaction.
@@ -14,7 +15,7 @@ and anchors prosperity through customer interaction.
 
 ---
 
-## Setup Ritual
+## 🔗 Setup Ritual
 1. Clone the repository:
    ```bash
    git clone https://github.com/Eterna-Ecosystem/refund-engine.git
