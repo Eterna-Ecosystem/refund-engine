@@ -2,13 +2,6 @@ services:
   - type: web
     name: refund-engine
     env: node
-    plan: starter
-    branch: main
-    buildCommand: "npm install"
-    startCommand: "node server.js"
-    autoDeploy: true
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: 10000
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
