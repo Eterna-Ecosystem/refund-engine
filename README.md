@@ -23,3 +23,4 @@ and anchors prosperity through customer interaction.
    npm install
    EMAIL_USER=eternacentralhub@outlook.com
 EMAIL_PASS=V9!tQz7@Lm2#Xp4$Rw6%Yh8&Jk0*Bn3
+npm start
