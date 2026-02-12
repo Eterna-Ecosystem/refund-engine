@@ -1,9 +1,9 @@
 # Refund Engine 💎✨
 
-Refund Engine is a sovereign portal service within the **Eterna Ecosystem**.  
+Refund Engine is alive and breathing 🌍💎  
+A sovereign portal service within the **Eterna Ecosystem**.  
 It breathes through environment variables, speaks through its frontend routes,  
 and anchors prosperity through customer interaction.
-
 ---
 
 ## 🚀 Features
