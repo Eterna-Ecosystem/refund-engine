@@ -6,14 +6,16 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #000022;
-      color: #fff;
-      margin: 40px;
+      background: url("diamond-note.jpg") no-repeat center center fixed;
+      background-size: cover;
       text-align: center;
+      padding: 20px;
+      color: #fff;
     }
 
-    /* Glow headings */
+    /* Headings glow */
     h1, h2 {
+      color: #fff;
       text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
     }
 
@@ -30,7 +32,7 @@
 
     /* Status + form glow */
     .status, .form-section {
-      background: #111133;
+      background: rgba(0,0,0,0.7);
       padding: 20px;
       margin-bottom: 30px;
       border-radius: 8px;
@@ -40,13 +42,13 @@
     }
 
     /* Inputs glow */
-    input {
-      margin-top: 5px;
-      padding: 8px;
+    input, textarea, button {
+      display: block;
       width: 100%;
-      max-width: 400px;
-      border: 1px solid #00ffff;
+      margin: 10px 0;
+      padding: 10px;
       border-radius: 5px;
+      border: 1px solid #00ffff;
       background-color: #222244;
       color: #fff;
       box-shadow: 0 0 10px #00ffff;
@@ -54,21 +56,17 @@
 
     /* Button glow */
     button {
-      background: #00ffff;
+      background-color: #00ffff;
       color: black;
       border: none;
       cursor: pointer;
-      margin-top: 15px;
-      padding: 12px 24px;
-      border-radius: 5px;
-      font-weight: bold;
-      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
-      transition: transform 0.2s ease-in-out;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+      transition: box-shadow 0.3s ease, transform 0.2s ease-in-out;
     }
 
     button:hover {
+      box-shadow: 0 0 20px rgba(255, 0, 255, 1), 0 0 40px rgba(255, 255, 0, 1);
       transform: scale(1.1);
-      box-shadow: 0 0 30px #ff00ff, 0 0 60px #ffff00;
     }
   </style>
 </head>
