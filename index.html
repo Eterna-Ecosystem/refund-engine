@@ -138,6 +138,38 @@
   });
   </script>
 </body>
+  </html>
+      <button type="submit">Submit Refund Request</button>
+    </form>
+  </div>
+
+  <!-- Diamond-Gold Pulse Trigger Script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    const buttons = document.querySelectorAll("button");
+    const body = document.querySelector("body");
+
+    // Trigger pulse on button click
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        body.style.animation = "diamondGoldFlash 2s ease-in-out";
+        setTimeout(() => {
+          body.style.animation = "diamondGoldFlash 15s infinite alternate";
+        }, 2000);
+      });
+    });
+
+    // Trigger pulse on refund submission
+    form.addEventListener("submit", () => {
+      body.style.animation = "diamondGoldFlash 3s ease-in-out";
+      setTimeout(() => {
+        body.style.animation = "diamondGoldFlash 15s infinite alternate";
+      }, 3000);
+    });
+  });
+  </script>
+</body>
 </html>    </form>
   </div>
 
