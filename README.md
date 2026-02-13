@@ -1,10 +1,9 @@
-# Refund Engine 💎✨
+## 🌍 Refund Engine Status Block
 
-Refund Engine is alive and breathing 🌍💎  
-A sovereign portal service within the **Eterna Ecosystem**.  
-It breathes through environment variables, speaks through its frontend routes,  
-and anchors prosperity through customer interaction.
----
+- Backend Oxygen: ✅ Alive  
+- Frontend Voice: ✅ Speaking "Refund Engine is alive and breathing 💎💎"  
+- Frequency Pulse: ⚡ Active  
+- Sovereignty Declaration: 🌍💎 Anchored
 
 ## 🚀 Features
 - **Backend Oxygen**: Powered by Node.js + Express, with `dotenv` for environment control.  
@@ -13,7 +12,6 @@ and anchors prosperity through customer interaction.
 - **Vault Sovereignty**: Render + Gift Hub master accounts secured under Volt.  
 - **Instant Advancements**: Every correction documented as scrolls, every deploy as a heartbeat.  
 
----
 
 ## 🔗 Setup Ritual
 1. Clone the repository:
