@@ -31,3 +31,7 @@
 EMAIL_PASS=V9!tQz7@Lm2#Xp4$Rw6%Yh8&Jk0*Bn3
 npm start
 [View Glyph Branding Kit](branding-kit.md)
+## 📂 Vaults
+
+- [Docs Vault](docs/README.md) → Proof scrolls and redeploy rituals  
+- [Branding Kit Vault](branding-kit/README.md) → Glyph kits and visual resonance
