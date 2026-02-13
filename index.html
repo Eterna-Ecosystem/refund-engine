@@ -2,18 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Refund Engine Portal</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Refund Engine Sovereignty Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      margin: 40px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .status, .form-section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, button {
+      margin-top: 5px;
+      padding: 8px;
+      width: 100%;
+      max-width: 400px;
+    }
+    button {
+      background: #0078d7;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+  </style>
 </head>
 <body>
-  <h1>Refund Engine Portal</h1>
-  <form id="refundForm">
-    <input type="text" name="transactionId" placeholder="Transaction ID" required>
-    <input type="number" name="amount" placeholder="Amount" required>
-    <textarea name="reason" placeholder="Reason"></textarea>
-    <input type="email" name="customerEmail" placeholder="Customer Email" required>
-    <button type="submit">Submit Refund</button>
-  </form>
+  <h1>Refund Engine Sovereignty Portal 💎⚡</h1>
+
+  <!-- Status Section -->
+  <div class="status">
+    <h2>Engine Status</h2>
+    <p id="status">Loading sovereign voice...</p>
+    <p id="backend"></p>
+    <p id="frontend"></p>
+    <p id="frequency"></p>
+    <p id="uptime"></p>
+    <p id="requests"></p>
+  </div>
+
+  <!-- Customer Input Form -->
+  <div class="form-section">
+    <h2>Submit Refund Request</h2>
+    <form action="/refund" method="POST" enctype="multipart/form-data">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="receipt">Upload Receipt:</label>
+      <input type="file" id="receipt" name="receipt" required>
+
+      <button type="submit">Submit Refund Request</button>
+    </form>
+  </div>
+
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
