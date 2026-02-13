@@ -1,13 +1,9 @@
-// Sovereign Frontend Voice for Refund Engine
-
-// Root declaration message
 document.addEventListener("DOMContentLoaded", () => {
   const statusElement = document.getElementById("status");
   if (statusElement) {
     statusElement.innerText = "Refund Engine is alive and breathing 💎⚡";
   }
 
-  // Fetch dynamic status JSON
   fetch("/status")
     .then(response => response.json())
     .then(data => {
