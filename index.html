@@ -2,43 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Refund Engine Sovereignty Portal</title>
+  <title>Refund Engine Sovereignty Portal 💎⚡</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #222;
+      background: #000022;
+      color: #fff;
       margin: 40px;
+      text-align: center;
     }
+
+    /* Glow headings */
     h1, h2 {
-      color: #333;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
     }
+
+    /* Sparkle animation */
+    @keyframes sparkle {
+      0% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
+      50% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ffff00; }
+      100% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
+    }
+
+    .sparkle {
+      animation: sparkle 2s infinite;
+    }
+
+    /* Status + form glow */
     .status, .form-section {
-      background: #fff;
+      background: #111133;
       padding: 20px;
       margin-bottom: 30px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px #00ffff;
+      display: inline-block;
+      text-align: left;
     }
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-    input, button {
+
+    /* Inputs glow */
+    input {
       margin-top: 5px;
       padding: 8px;
       width: 100%;
       max-width: 400px;
-    }
-    button {
-      background: #0078d7;
+      border: 1px solid #00ffff;
+      border-radius: 5px;
+      background-color: #222244;
       color: #fff;
+      box-shadow: 0 0 10px #00ffff;
+    }
+
+    /* Button glow */
+    button {
+      background: #00ffff;
+      color: black;
       border: none;
       cursor: pointer;
       margin-top: 15px;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: bold;
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+      transition: transform 0.2s ease-in-out;
     }
+
     button:hover {
-      background: #005fa3;
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #ff00ff, 0 0 60px #ffff00;
     }
   </style>
 </head>
@@ -48,7 +78,7 @@
   <!-- Status Section -->
   <div class="status">
     <h2>Engine Status</h2>
-    <p id="status">Loading sovereign voice...</p>
+    <p id="status">Refund Engine is alive and breathing 💎⚡</p>
     <p id="backend"></p>
     <p id="frontend"></p>
     <p id="frequency"></p>
@@ -73,7 +103,22 @@
     </form>
   </div>
 
-  <!-- Script -->
-  <script src="script.js"></script>
+  <!-- Sparkle Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector("form");
+      const statusDiv = document.getElementById("status");
+      const heading = document.querySelector("h1");
+
+      // Sparkle when portal loads
+      heading.classList.add("sparkle");
+
+      // Sparkle when submitting refund
+      form.addEventListener("submit", () => {
+        statusDiv.textContent = "✨ Sparkle activated — refund request submitting... 💎⚡";
+        statusDiv.classList.add("sparkle");
+      });
+    });
+  </script>
 </body>
-</html>
+  </html>
