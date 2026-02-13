@@ -2,9 +2,32 @@ const express = require("express");
 const path = require("path");
 const multer = require("multer");
 const nodemailer = require("nodemailer");
+const stripe = require("stripe")("sk_test_yourStripeSecretKey"); // Replace with your real Stripe secret key
 
 const app = express();
-const upload = multer({ dest: "uploads/" });
+
+// Configure Multer storage
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/"); // folder for receipts
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  }
+});
+
+// Multer upload config with 10 MB limit
+const upload = multer({
+  storage: storage,
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB
+  fileFilter: function (req, file, cb) {
+    if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
+      cb(null, true);
+    } else {
+      cb(new Error("Only JPEG/PNG files allowed"));
+    }
+  }
+});
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -23,7 +46,11 @@ app.post("/refund", upload.single("receipt"), async (req, res) => {
   const { name, email } = req.body;
   const receiptFile = req.file;
 
-  // Nodemailer transport using Volt credentials
+  if (!receiptFile) {
+    return res.status(400).send("No receipt uploaded. Please upload a JPEG/PNG image.");
+  }
+
+  // Nodemailer transport using Outlook credentials
   const transporter = nodemailer.createTransport({
     service: "outlook",
     auth: {
@@ -40,15 +67,12 @@ app.post("/refund", upload.single("receipt"), async (req, res) => {
   };
 
   try {
+    // Send confirmation email
     await transporter.sendMail(mailOptions);
 
-    // ⚡ Direct Payment Trigger (Stripe example)
-    // Replace with your Stripe secret key
-    const stripe = require("stripe")("sk_test_yourStripeSecretKey");
-
-    // Create a payment intent (example: fixed refund amount)
+    // Create a Stripe payment intent (example: fixed refund amount)
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: 5000, // amount in cents (e.g., 50.00)
+      amount: 5000, // amount in cents (e.g., $50.00)
       currency: "usd",
       payment_method_types: ["card"],
       receipt_email: email
