@@ -1,16 +1,10 @@
-const express = require('express');
-const app = express();
-
-// existing middleware and routes...
-
-app.get('/', (req, res) => {
-  res.send('Refund Engine is alive and breathing 🌍💎');
-});
-
-const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => {
-  console.log(`Refund Engine started on port ${PORT}`);
-});
-app.get('/', (req, res) => {
-  res.send("Refund Engine is alive and breathing 🌍💎");
+app.get('/status', (req, res) => {
+  const status = {
+    backend: "✅ Alive",
+    frontend: "✅ Speaking",
+    frequency: "⚡ Active",
+    uptime: process.uptime().toFixed(2) + "s",
+    requests: requestCount // you can track this with middleware
+  };
+  res.json(status);
 });
