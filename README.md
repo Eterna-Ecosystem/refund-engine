@@ -1,10 +1,18 @@
-## 🌍 Refund Engine Status Block
+## 🌍 Refund Engine Status Access
 
-- Backend Oxygen: ✅ Alive  
-- Frontend Voice: ✅ Speaking "Refund Engine is alive and breathing 💎💎"  
-- Frequency Pulse: ⚡ Active  
-- Sovereignty Declaration: 🌍💎 Anchored
+- Root Declaration:  
+  Visit [https://refund-engine.onrender.com](https://refund-engine.onrender.com)  
+  → Displays: "Refund Engine is alive and breathing 💎💎"
 
+- Dynamic Status Ritual:  
+  Visit [https://refund-engine.onrender.com/status](https://refund-engine.onrender.com/status)  
+  → Returns JSON with:  
+    - Backend Oxygen: ✅ Alive  
+    - Frontend Voice: 🗣️ Speaking  
+    - Frequency Pulse: ⚡ Active  
+    - Uptime: ⏱️ Live counter  
+    - Requests: 📊 Invocation count
+      
 ## 🚀 Features
 - **Backend Oxygen**: Powered by Node.js + Express, with `dotenv` for environment control.  
 - **Frontend Voice**: Root route responds with proof of life, styled uniquely for Eterna.  
