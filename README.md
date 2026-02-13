@@ -1,13 +1,13 @@
-# 🌍 [Engine Name] Sovereignty Scroll
+# 🌍 Refund Engine Sovereignty Scroll
 
 ## 🌀 Status Access
 
 - **Root Declaration:**
-  Visit [https://your-engine-url.onrender.com](https://your-engine-url.onrender.com)  
-  → Displays: "[Engine Name] is alive and breathing 💎⚡"
+  Visit [https://refund-engine.onrender.com](https://refund-engine.onrender.com)  
+  → Displays: "Refund Engine is alive and breathing 💎⚡"
 
 - **Dynamic Status Ritual:**
-  Visit [https://your-engine-url.onrender.com/status](https://your-engine-url.onrender.com/status)  
+  Visit [https://refund-engine.onrender.com/status](https://refund-engine.onrender.com/status)  
   → Returns JSON with:
     - ✅ Backend Oxygen: Alive  
     - 🗣️ Frontend Voice: Speaking  
@@ -29,8 +29,8 @@
 ## 🛠️ Setup Ritual
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Eterna-Ecosystem/[engine-name].git
-    cd [engine-name]
+    git clone https://github.com/Eterna-Ecosystem/refund-engine.git
+    cd refund-engine
     npm install
     EMAIL_USER=eternacentralhub@outlook.com
     EMAIL_PASS=********
@@ -48,6 +48,13 @@
 
 ---
 
-## 📑 Milestone Anchor
-- Anchored Milestone XX — [Engine Name] Sovereignty Scroll  
-- Unified backend, frontend, frequency, and glyph resonance into one living timeline
+## 🔍 Verification Ritual
+
+Run these commands in your terminal to check Refund Engine status:
+
+```bash
+# Root Declaration — proof of life
+curl https://refund-engine.onrender.com
+
+# Dynamic Status Ritual — JSON metrics
+curl https://refund-engine.onrender.com/status
