@@ -1,40 +1,62 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background: url("diamond-note.jpg") no-repeat center center fixed;
+  background-size: cover;
   text-align: center;
   padding: 20px;
+  color: #fff;
 }
 
-h1 {
-  color: #333;
+/* Headings glow */
+h1, h2 {
+  color: #fff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
+/* Sparkle animation */
+@keyframes sparkle {
+  0% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
+  50% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ffff00; }
+  100% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
+}
+
+.sparkle {
+  animation: sparkle 2s infinite;
+}
+
+/* Form container glow */
 form {
-  background: #fff;
+  background: rgba(0,0,0,0.7);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px #00ffff;
   display: inline-block;
 }
 
+/* Inputs glow */
 input, textarea, button {
   display: block;
   width: 100%;
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #00ffff;
+  background-color: #222244;
+  color: #fff;
+  box-shadow: 0 0 10px #00ffff;
 }
 
+/* Button glow */
 button {
-  background-color: #007BFF;
-  color: white;
+  background-color: #00ffff;
+  color: black;
   border: none;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+  transition: box-shadow 0.3s ease, transform 0.2s ease-in-out;
 }
 
 button:hover {
-  box-shadow: 0 0 20px rgba(0, 123, 255, 1);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 1), 0 0 40px rgba(255, 255, 0, 1);
+  transform: scale(1.1);
 }
