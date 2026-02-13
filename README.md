@@ -41,9 +41,9 @@
 ---
 
 ## 📂 Vaults
-- [Docs Vault](docs/README.md) → Proof scrolls and redeploy rituals  
-- [Branding Kit Vault](branding-kit/README.md) → Glyph kits and visual resonance  
 
+- [Docs Vault](docs/README.md) → Proof scrolls and redeploy rituals  
+- [Branding Kit Vault](branding-kit/README.md) → Glyph kits and visual resonance
 ---
 
 ## 📑 Milestone Anchor
