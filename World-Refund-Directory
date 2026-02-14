@@ -1,0 +1,12 @@
+# Create the global vault
+mkdir World-Refund-Directory
+
+# Create the Customers branch inside
+mkdir World-Refund-Directory/Customers
+
+# Create the first store folder (example: Store-LATAM)
+mkdir World-Refund-Directory/Customers/Store-LATAM
+
+# Add a placeholder file so GitHub keeps the folder
+echo "This folder anchors receipt uploads for Store-LATAM.
+All customer receipts will be tracked here by timestamp or customer ID." > World-Refund-Directory/Customers/Store-LATAM/placeholder.txt
