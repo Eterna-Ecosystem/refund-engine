@@ -1,2 +1,0 @@
-This folder anchors receipt uploads for Store-XYZ.
-All customer receipts will be tracked here by timestamp or customer ID.
