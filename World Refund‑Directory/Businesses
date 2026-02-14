@@ -1,0 +1,9 @@
+# Create the Businesses branch inside the global vault
+mkdir World-Refund-Directory/Businesses
+
+# Create the first store folder (example: Store-123)
+mkdir World-Refund-Directory/Businesses/Store-123
+
+# Add a placeholder file so GitHub keeps the folder
+echo "This folder anchors receipt uploads for Store-123.
+All business receipts will be tracked here by timestamp or store ID." > World-Refund-Directory/Businesses/Store-123/placeholder.txt
