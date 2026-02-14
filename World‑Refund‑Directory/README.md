@@ -1,4 +1,4 @@
-echo "# Refund Engine — World Refund Directory
+# Refund Engine — World Refund Directory
 
 ## 📑 Global Ledger
 The Refund Engine tracks all receipts globally in a sovereign structure:
@@ -31,4 +31,6 @@ Examples:
 - 2026-02-14_storeUSA_456.pdf
 
 ## 📑 Sovereign Protection
-- GitHub ignores all receipt files (JPG, PNG, PDF, DOCX) to prevent flooding
+- GitHub ignores all receipt files (JPG, PNG, PDF, DOCX) to prevent flooding.
+- Placeholders (placeholder.txt) remain visible to anchor the folder structure.
+- This ensures the ledger is traceable, sovereign, and clean while uploads remain secure.
