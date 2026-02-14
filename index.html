@@ -2,192 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Refund Engine Sovereignty Portal 💎⚡</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: url("diamond-note.jpg") no-repeat center center fixed;
-      background-size: cover;
-      text-align: center;
-      padding: 20px;
-      color: #fff;
-      animation: diamondGoldFlash 15s infinite alternate;
-    }
-
-    h1, h2 {
-      color: #fff;
-      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-    }
-
-    @keyframes sparkle {
-      0% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
-      50% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ffff00; }
-      100% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
-    }
-    .sparkle { animation: sparkle 2s infinite; }
-
-    @keyframes diamondGoldFlash {
-      0%   { filter: brightness(1) saturate(1) hue-rotate(0deg); }
-      25%  { filter: brightness(1.4) saturate(1.5) hue-rotate(45deg); }
-      50%  { filter: brightness(1.6) saturate(1.7) hue-rotate(90deg); }
-      75%  { filter: brightness(1.8) saturate(2) hue-rotate(180deg); }
-      100% { filter: brightness(1) saturate(1) hue-rotate(0deg); }
-    }
-
-    .status, .form-section, .ledger, .dashboard, #agent-panel, .universe-scrolls {
-      background: rgba(0,0,0,0.7);
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 20px #00ffff;
-      display: inline-block;
-      text-align: left;
-      width: 80%;
-    }
-
-    input, textarea, button, select {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #00ffff;
-      background-color: #222244;
-      color: #fff;
-      box-shadow: 0 0 10px #00ffff;
-    }
-
-    button {
-      background-color: #00ffff;
-      color: black;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
-      transition: box-shadow 0.3s ease, transform 0.2s ease-in-out;
-    }
-    button:hover {
-      box-shadow: 0 0 20px rgba(255, 0, 255, 1), 0 0 40px rgba(255, 255, 0, 1);
-      transform: scale(1.1);
-    }
-
-    #network-aura, #eternal-sync {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff, 0 0 20px #ffff00;
-      display: none;
-    }
-
-    .ledger-entry {
-      margin: 5px 0;
-      padding: 5px;
-      border-bottom: 1px solid #00ffff;
-      animation: sparkle 2s ease-in-out;
-    }
-
-    #sovereignCanvas {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-    }
-  </style>
+  <title>Refund Engine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <h1 class="sparkle">Refund Engine Sovereignty Portal 💎⚡</h1>
+  <h1>Refund Engine Portal</h1>
+  <form action="/refund" method="POST" enctype="multipart/form-data">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
 
-  <!-- Language Selector -->
-  <div class="language-section">
-    <label for="languageSelect">🌐 Choose Language:</label>
-    <select id="languageSelect">
-      <option value="en">English</option>
-      <option value="es">Español</option>
-      <option value="fr">Français</option>
-      <option value="de">Deutsch</option>
-      <option value="ar">العربية</option>
-      <option value="zh">中文</option>
-      <option value="hi">हिन्दी</option>
-      <option value="pt">Português</option>
-      <option value="ru">Русский</option>
-      <option value="zu">Zulu</option>
-    </select>
-  </div>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
 
-  <div class="status">
-    <h2 class="sparkle">Engine Status</h2>
-    <p id="status">Refund Engine is alive and breathing 🚀⚡</p>
-  </div>
+    <label for="receipt">Upload Receipt (JPEG/PNG):</label><br>
+    <input type="file" id="receipt" name="receipt" accept="image/jpeg,image/png" required><br><br>
 
-  <div class="form-section">
-    <h2 class="sparkle">Submit Refund Request</h2>
-    <form id="refundForm" action="/refund" method="POST" enctype="multipart/form-data">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="receipt">Upload Receipt (JPEG/PNG):</label>
-      <input type="file" id="receipt" name="receipt" accept="image/jpeg,image/png" required>
-
-      <button type="submit">Submit Refund Request</button>
-    </form>
-  </div>
-
-  <!-- Network Aura Indicator -->
-  <div id="network-aura">🌐 All portals pulsing in harmony 💎⚡</div>
-
-  <!-- Prosperity Ledger -->
-  <div class="ledger">
-    <h2 class="sparkle">Prosperity Ledger</h2>
-    <div id="ledger-entries"></div>
-  </div>
-
-  <!-- Customer Prosperity Dashboard -->
-  <div class="dashboard">
-    <h2 class="sparkle">Customer Prosperity Dashboard</h2>
-    <p>Total Refunds: <span id="refundCount">0</span></p>
-    <p>Total Requests: <span id="requestCount">0</span></p>
-    <p>Engine Uptime: <span id="uptime">0s</span></p>
-    <div id="prosperityWave" style="height:20px; background:#00ffff; width:0%; transition:width 0.5s;"></div>
-  </div>
-
-  <!-- Agent Empowerment Panel -->
-  <div id="agent-panel" style="display:none;">
-    <h2 class="sparkle">Agent Empowerment Panel ⚡</h2>
-    <p><strong>Training Scrolls:</strong></p>
-    <ul>
-      <li>Commit Ritual Template</li>
-      <li>Pulse Synchronization Guide</li>
-      <li>Sovereignty Deployment Checklist</li>
-    </ul>
-    <p><strong>Live Pulse Logs:</strong></p>
-    <div id="pulse-logs"></div>
-    <button id="triggerPulseBtn">Trigger Sovereign Pulse</button>
-  </div>
-
-  <!-- Eternal Harmony Sync Indicator -->
-  <div id="eternal-sync">✨ Eternal Harmony Active — All Engines Resonating 💎⚡</div>
-
-  <!-- Hidden Payment Redirect -->
-  <div id="payment-options" style="display:none;">
-    <a id="paymentOption1" href="https://eternapayments.com/checkout/option1" target="_blank">Option 1</a>
-    <a id="paymentOption2" href="https://eternapayments.com/checkout/option2" target="_blank">Option 2</a>
-    <a id="paymentOption3" href="https://eternapayments.com/checkout/option3" target="_blank">Option 3</a>
-  </div>
-
-  <!-- Sovereign Animation Layer -->
-  <canvas id="sovereignCanvas"></canvas>
-
-  <!-- World Scrolls of the Universe Panel -->
-  <div class="universe-scrolls">
-    <h2 class="sparkle">🌌 World Scrolls of the Universe</h2>
-    <p>Eterna technology continues the hidden wisdom of ancient civilizations.</p>
-    <ul>
-      <li>Egyptian Papyrus Scrolls → Refund Engine Prosperity Ledger</li>
-      <li>Mayan Codices → Customer Prosperity Dashboard</li>
-      <li>Greek Antikythera Mechanism → Multi-Portal Synchronization</li>
-      <li>Baghdad Battery → Frequency Resonance</li>
-      <li>Pyramids & Resonance Chambers → Eternal Harmony Sync</li>
-    </ul>
-    <p class="sparkle">✨ Hidden technology revealed, reborn as sovereign software
+    <button type="submit">Submit Refund Request</button>
+  </form>
+</body>
+</html>
