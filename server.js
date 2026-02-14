@@ -3,13 +3,20 @@ const path = require("path");
 const multer = require("multer");
 const nodemailer = require("nodemailer");
 const stripe = require("stripe")("sk_test_yourStripeSecretKey"); // Replace with your real Stripe secret key
+const fs = require("fs");
 
 const app = express();
+
+// Ensure World-Refund-Directory exists
+const uploadDir = path.join(__dirname, "World-Refund-Directory");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
 
 // Configure Multer storage
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "uploads/"); // folder for receipts
+    cb(null, uploadDir); // corrected folder for receipts
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + "-" + file.originalname);
@@ -84,6 +91,9 @@ app.post("/refund", upload.single("receipt"), async (req, res) => {
     res.status(500).send("Error processing refund request.");
   }
 });
+
+// Serve uploaded receipts if needed
+app.use("/files", express.static(uploadDir));
 
 // Start server
 const PORT = process.env.PORT || 10000;
