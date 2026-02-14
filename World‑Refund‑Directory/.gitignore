@@ -1,0 +1,6 @@
+# Ignore all receipt uploads (JPG/PNG)
+World-Refund-Directory/**/*.jpg
+World-Refund-Directory/**/*.png
+
+# Keep placeholders visible
+!World-Refund-Directory/**/placeholder.txt
