@@ -1,0 +1,2 @@
+This folder anchors receipt uploads for Store-AFRICA.
+All business receipts will be tracked here by timestamp or store ID.
